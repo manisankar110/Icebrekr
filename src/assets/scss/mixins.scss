@@ -1,0 +1,89 @@
+@mixin media-breakpoint-max-480 {
+  @media(max-width:480.5px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-min-481 {
+  @media(min-width:481px) {
+    @content;
+  }
+}
+
+@mixin media-min-481-to-max-width-767 {
+  @media screen and (max-width: 767.5px) and (min-width: 481px) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-max-768 {
+  @media (max-width: 767.5px) {
+    @content;
+  }
+}
+
+
+@mixin media-min-width-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin media-breakpoint-min-768-max-991 {
+  @media screen and (max-width: 991.5px) and (min-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin media-max-width-991 {
+  @media screen and (max-width: 991.5px) {
+    @content;
+  }
+}
+
+@mixin media-min-width-992 {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+
+@mixin media-breakpoint-min-992-max-1200px {
+  @media screen and (max-width: 1200.5px) and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin media-max-width-1200 {
+  @media screen and (min-width: 1199.5px) {
+    @content;
+  }
+}
+
+@mixin media-min-width-1201 {
+  @media screen and (min-width: 1201px) {
+    @content;
+  }
+}
+
+
+@mixin media-min-width-1301 {
+  @media screen and (min-width:1301px) {
+    @content;
+  }
+}
+
+@mixin media-min-width-2000 {
+  @media screen and (min-width:2000px) {
+    @content;
+  }
+}
+
+
+@mixin media-breakpoint-min-1500 {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}

@@ -1,0 +1,180 @@
+@import "/src/assets/scss/mixins.scss";
+
+.bg-image {
+  background-image: url("../../assets/images/bg-image.jpg");
+  width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  overflow:auto;
+  @media (orientation: landscape) {
+    height: auto;
+  }
+  @media (orientation: portrait) {
+    height: 100%;
+  }
+  @include media-min-width-1201{
+    height: 100%;
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  // min-width: 280px;
+  max-width: 420px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px;
+  // height: 100%;
+  // background-color: white;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(7.5px);
+  margin: 26px;
+  @include media-breakpoint-max-480{
+    padding: 26px 16px;
+  }
+  @include media-breakpoint-max-768{
+    min-width: 280px;
+    max-width: 420px; 
+  }
+  @include media-breakpoint-min-481{
+    width: 420px;
+  }
+}
+
+.line{
+  margin: 1rem;
+}
+
+.login-page-logo {
+  width: 67.001px;
+  height: 68.862px;
+}
+.logo-combine{
+  display: flex;
+  gap: 5px;
+}
+.logo-combine img{
+  width: 100%;
+}
+.event-host-title{
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; 
+  letter-spacing: -0.3px; 
+  // padding-top: 15px;
+  // padding-bottom: 5px;
+  @include media-breakpoint-max-480{
+    font-size: 17px; 
+    line-height: 22px;
+    // padding-top: 10px;
+  }
+}
+.login-title{
+  color: #000;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.5px; 
+  @include media-breakpoint-max-480{
+    font-size: 22px; 
+    line-height: 28px; 
+  }
+  // @include media-min-width-1201{
+  //   font-size: 28px;
+  // }
+}
+.desc1{
+  color: #000;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  @include media-breakpoint-max-480{
+    font-size: 13px; 
+    line-height: 16px;
+  }
+}
+.divide-line {
+  overflow: hidden;
+  text-align: center;
+  font-size: 14px; 
+}
+.divide-line:before,
+.divide-line:after {
+  background-color: #D1D1D6;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+.divide-line:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+.divide-line:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+.social-login-btn-wrapper{
+  display: flex;
+  padding-top: 15px;
+  justify-content: center;
+  align-items: center;
+  // gap: 10px;
+  align-self: stretch; 
+  flex-direction: column;
+  width: 100%;
+}
+.email-btn, .google-btn, .facebook-btn, .apple-btn {
+  color: #fff;
+  display: flex;
+  padding: 10px 16px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch; 
+  border-radius: 26px; 
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.32px; 
+  cursor: pointer;
+
+  @include media-breakpoint-max-480{
+    padding: 16px;
+  }
+}
+.email-btn{
+  background-color: #1C3972;
+  margin-top: 10px;
+}
+.google-btn{
+  background: #F34B35; 
+}
+.facebook-btn{
+  background: #2463DE; 
+}
+.facebook-btn span{
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.facebook-btn .fa-facebook{
+  color: #2463DE;
+}
+.apple-btn{
+  background: #000; 
+}
