@@ -9,7 +9,15 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  option:number = 0;
+
   ngOnInit(): void {
   }
+
+  backClicked(value:any) : void{
+    console.log(value)
+    this.option = value
+  }
+
 
 }

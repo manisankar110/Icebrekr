@@ -1,0 +1,98 @@
+
+@import "../../../assets/scss/mixins.scss";
+
+.email-and-password-login-div-wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    @include media-breakpoint-max-480{
+        gap: 16px;
+    }
+  }
+  .email-and-password-login-div-wrapper form .form-group{
+    padding: 16px 0px;
+    gap: 10px;
+  }
+  .email-and-password-login-div-wrapper form div.form-group label{
+    color:  #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.32px; 
+  }
+  .email-and-password-login-div-wrapper form .form-group input{ 
+    display: flex;
+    padding: 6px 16px;
+    align-items: center;
+    gap: 6px;
+    align-self: stretch; 
+    border-radius: 10px;
+    border: 1px solid #D1D1D6;
+    background: #FFF;
+    font-size: 13px;
+    color: #8E8E93;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.32px;  
+    @include media-breakpoint-max-480{
+        font-size: 16px; 
+        padding: 16px;
+    }
+  }
+  .email-and-password-login-div-wrapper form section{
+    padding: 0px 16px;
+    // display: none;
+  }
+  .back-text{
+    color: #1C3972;
+    text-align: left;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.32px; 
+    // padding: 6px 0px ;
+    cursor: pointer;
+  }
+  .login-with-email-title{
+    color: #000;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.3px; 
+    padding-top: 6px;
+    @include media-breakpoint-max-480{
+        font-size: 28px; 
+    }
+  }
+  .forget-pwd-text{
+    color: #544F63;
+    text-align: right;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.32px; 
+    @include media-breakpoint-max-480{
+        font-size: 16px;
+    }
+  }
+  .login-btn{
+    color: #fff;
+    display: flex;
+    width: 100%;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch; 
+    border-radius: 26px;
+    background: #1C3972;
+    font-size: 13px;
+    @include media-breakpoint-max-480{
+        font-size: 16px;
+    }
+  }

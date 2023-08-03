@@ -1,10 +1,11 @@
 <div class="bg-image container-fluid d-flex justify-content-center align-items-center">
     <div class="d-flex align-items-center justify-content-center">
         <div class="form-wrapper">
-            <div class="d-flex flex-column align-items-center justify-content-center w-100">
+            <div class="d-flex flex-column align-items-center justify-content-center w-100" *ngIf="option == 0">
                 <span>
                     <img class="login-page-logo" src="../../assets/images/logo.png"/>
                 </span>
+                
                 <div class="logo-combine">
                     <img src="../../assets/icons/i.png" />
                     <img src="../../assets/icons/c.png" />
@@ -19,7 +20,7 @@
                 <hr class="w-100 line" style="background: #D1D1D6; ">
                 <h3 class="login-title">Login</h3>
                 <p class="desc1">Choose your method to login</p>
-                <p class="email-btn w-100"><i class="fa fa-envelope pr-2" aria-hidden="true"></i> Email</p>
+                <p class="email-btn w-100" (click)="option = 1"><i class="fa fa-envelope pr-2" aria-hidden="true"></i> Email</p>
                 <p class="divide-line w-100 m-0">Or</p>
                 <div class="social-login-btn-wrapper">
                     <p class="google-btn w-100"><i class="fa fa-google pr-2" aria-hidden="true"></i> Google</p>
@@ -27,6 +28,9 @@
                     <p class="apple-btn w-100 mb-0"><i class="fa fa-apple pr-2" aria-hidden="true"></i> Apple ID</p>
                 </div>
 
+            </div>
+            <div class="w-100" *ngIf="option == 1" >
+                <app-login-with-email-and-pwd (optionselected)= "backClicked($event)"></app-login-with-email-and-pwd>
             </div>
         </div>
     </div>
