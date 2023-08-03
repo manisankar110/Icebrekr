@@ -32,6 +32,9 @@
             <div class="w-100" *ngIf="option == 1" >
                 <app-login-with-email-and-pwd (optionselected)= "backClicked($event)"></app-login-with-email-and-pwd>
             </div>
+            <div class="w-100" *ngIf="option == 2" >
+                <app-reset-password (optionselected)= "backClicked($event)"></app-reset-password>
+            </div>
         </div>
     </div>
 </div>
