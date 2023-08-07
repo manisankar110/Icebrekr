@@ -32,9 +32,11 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/assets/scss/mixins.scss",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/font-awesome/css/font-awesome.min.css",
-              "./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -102,7 +104,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/scss/mixins.scss",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           }

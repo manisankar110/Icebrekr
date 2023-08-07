@@ -1,7 +1,7 @@
 @import "/src/assets/scss/mixins.scss";
 
 .bg-image {
-  background-image: url("../../assets/images/bg-image.jpg");
+  background-image: url("../../assets/images/bg-image.png");
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
@@ -61,7 +61,7 @@
   width: 100%;
 }
 .event-host-title{
-  color: #000;
+  color: var(--black);
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -76,7 +76,7 @@
   }
 }
 .login-title{
-  color: #000;
+  color: var(--black);
   font-size: 34px;
   font-style: normal;
   font-weight: 700;
@@ -91,7 +91,7 @@
   // }
 }
 .desc1{
-  color: #000;
+  color: var(--black);
   font-size: 17px;
   font-style: normal;
   font-weight: 400;
@@ -108,7 +108,7 @@
 }
 .divide-line:before,
 .divide-line:after {
-  background-color: #D1D1D6;
+  background-color: var(--lighGray);
   content: "";
   display: inline-block;
   height: 1px;
@@ -134,47 +134,16 @@
   flex-direction: column;
   width: 100%;
 }
-.email-btn, .google-btn, .facebook-btn, .apple-btn {
-  color: #fff;
-  display: flex;
-  padding: 10px 16px;
-  justify-content: center;
-  align-items: center;
-  align-self: stretch; 
-  border-radius: 26px; 
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: -0.32px; 
-  cursor: pointer;
-
-  @include media-breakpoint-max-480{
-    padding: 16px;
-  }
-}
 .email-btn{
-  background-color: #1C3972;
+  background-color: var(--darkBlue);
   margin-top: 10px;
 }
 .google-btn{
-  background: #F34B35; 
+  background: var(--red); 
 }
 .facebook-btn{
-  background: #2463DE; 
-}
-.facebook-btn span{
-  display: flex;
-  align-items: end;
-  justify-content: center;
-  height: 16px;
-  width: 16px;
-  background-color: #fff;
-  border-radius: 50px;
-}
-.facebook-btn .fa-facebook{
-  color: #2463DE;
+  background: var(--blue); 
 }
 .apple-btn{
-  background: #000; 
+  background: var(--black); 
 }

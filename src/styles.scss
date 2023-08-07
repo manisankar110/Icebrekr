@@ -1,12 +1,48 @@
 @import "../src/assets/scss/mixins.scss";
 @import "../src/assets/scss/fonts.scss";
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap';
+// @import 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap';
+
+:root {
+    --darkBlue: #1C3972;
+    --white: #ffffff; 
+    --black: #000000;
+    --blue: #2463DE;
+    --red: #F34B35;
+    --lighGray: #D1D1D6;
+    --gray: #8E8E93;
+    --darkGray: #544F63;
+}
 
 body,html{
     margin: 0px;
     padding: 0px;
     width: 100%;
     height: 100%;
-    font-family: 'Noto Sans' !important;
+    font-family: 'NotoSans' !important;
     overflow-x: hidden;
 }
+
+// common btn style
+
+.primary-btn{
+    color: var(--white);
+    display: flex;
+    padding: 10px 16px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch; 
+    border-radius: 26px; 
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.32px; 
+    cursor: pointer;
+
+  @include media-breakpoint-max-480{
+    padding: 16px;
+  }
+}
+
+
+
