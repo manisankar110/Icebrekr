@@ -3,17 +3,21 @@
 .bg-image {
   background-image: url("../../assets/images/bg-image.png");
   width: 100%;
-  height: auto;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   overflow:auto;
-  @media (orientation: landscape) {
+  background-attachment: fixed;
+  @include media-max-height-480px{
     height: auto;
   }
-  @media (orientation: portrait) {
-    height: 100%;
-  }
+  // @media (orientation: landscape) {
+  //   height: 100%;
+  // }
+  // @media (orientation: portrait) {
+  //   height: 100%;
+  // }
   @include media-min-width-1201{
     height: 100%;
   }

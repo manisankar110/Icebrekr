@@ -5,7 +5,7 @@ import { AuthService } from '../services/auth.service';
 import { finalize } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ToastrAlertService } from 'src/app/shared/toastr/toastr.service';
-import { ToastContainerDirective } from 'ngx-toastr';
+import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-with-email-and-pwd',
@@ -25,16 +25,16 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
     private formBuilder: FormBuilder,
     public auth : AuthService,
     private router: Router,
-    public toastr: ToastrAlertService,
+    private toastrService: ToastrService
   ) { }
     
 
   
   ngOnInit(): void {
-    // this.toastr.overlayContainer = this.toastContainer;
+    this.toastrService.overlayContainer = this.toastContainer;
     this.initForm();
   }
-  
+
   initForm(){
     this.loginForm = new FormGroup({
       userName : new FormControl(null, [Validators.required]),
@@ -51,7 +51,7 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
    authLogin(){
     if (this.loginForm.invalid) {
       console.log(this.loginForm)
-      this.toastr.showError('Please fill all the neccesary details')
+      this.toastrService.error('Please fill all the neccesary details')
       return;
     }
 
@@ -62,12 +62,12 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
 
     const authToken:any = this.auth.loginToken(loginPayload).pipe(finalize(() => authToken.unsubscribe())).subscribe(
       (res: any) => {
-          // this.toastr.showSuccess('User successfully loggedIn')
+          // this.toastrService.showSuccess('User successfully loggedIn')
           this.router.navigateByUrl('/dashboard', { replaceUrl: true });
           this.clearForm();
       }, (error: HttpErrorResponse) => {
         // errorAlert(error.message, error.statusText)
-        // this.toastr.showError(error.message);
+        // this.toastrService.showError(error.message);
       }
     )
 

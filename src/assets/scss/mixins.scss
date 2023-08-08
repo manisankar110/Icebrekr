@@ -10,6 +10,12 @@
   }
 }
 
+@mixin media-max-height-480px {
+  @media(max-height:480px) {
+    @content;
+  }
+}
+
 @mixin media-min-481-to-max-width-767 {
   @media screen and (max-width: 767.5px) and (min-width: 481px) {
     @content;

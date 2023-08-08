@@ -4,6 +4,7 @@ import { LoginComponent } from './login.component';
 import { LoginWithEmailAndPwdComponent } from './login-with-email-and-pwd/login-with-email-and-pwd.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastContainerModule
   ]
 })
 export class LoginModule { }

@@ -3,14 +3,17 @@
 // @import 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap';
 
 :root {
-    --darkBlue: #1C3972;
-    --white: #ffffff; 
-    --black: #000000;
-    --blue: #2463DE;
-    --red: #F34B35;
-    --lighGray: #D1D1D6;
-    --gray: #8E8E93;
-    --darkGray: #544F63;
+    --darkBlue: #1C3972 !important;
+    --white: #ffffff !important;  
+    --black: #000000 !important;
+    --blue: #2463DE !important;
+    --red: #F34B35 !important;
+    --lighGray: #D1D1D6 !important;
+    --gray: #8E8E93 !important;
+    --darkGray: #544F63 !important;
+    --success: #34C759 !important;
+    --failed: #F34B35 !important;
+    --warning: #df9104 !important;
 }
 
 body,html{
@@ -20,6 +23,18 @@ body,html{
     height: 100%;
     font-family: 'NotoSans' !important;
     overflow-x: hidden;
+}
+
+// color-classes
+
+.success-text{
+  color: var(--success);
+}
+.failed-text{
+  color: var(--failed);
+}
+.warning-text{
+  color: var(--warning);
 }
 
 // common btn style
@@ -45,5 +60,47 @@ body,html{
   }
 } 
 
+// common input CSS
 
+.common-input{
+  display: flex !important;
+  padding: 6px 16px !important;
+  align-items: center !important;
+  gap: 6px !important;
+  align-self: stretch !important;  
+  border-radius: 10px !important;
+  border: 1px solid var(--lighGray) !important;
+  color: var(--darkBlue) !important;
+  background: var(--white) !important;
+  font-size: 13px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 22px !important;
+  letter-spacing: -0.32px !important;   
+  @include media-breakpoint-max-480{
+      font-size: 16px !important; 
+      padding: 16px !important;
+  }
+}
 
+.common-input:hover, .common-input:active, .common-input:focus, .common-input:focus-visible, .common-input:visited{
+  border: 1px solid var(--darkBlue) !important;
+  color: var(--darkBlue) !important;
+}
+
+.common-input:focus{
+  box-shadow: none !important
+}
+::-webkit-input-placeholder{
+  color: var(--gray);
+}
+
+.common-text-box-msg{
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  @include media-breakpoint-max-480{
+    font-size: 13px;
+  }
+}

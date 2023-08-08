@@ -21,26 +21,6 @@
     line-height: 22px;
     letter-spacing: -0.32px; 
   }
-  .email-and-password-login-div-wrapper form .form-group input{ 
-    display: flex;
-    padding: 6px 16px;
-    align-items: center;
-    gap: 6px;
-    align-self: stretch; 
-    border-radius: 10px;
-    border: 1px solid var(--lighGray);
-    background: var(--white);
-    font-size: 13px;
-    color: var(--gray);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 22px;
-    letter-spacing: -0.32px;  
-    @include media-breakpoint-max-480{
-        font-size: 16px; 
-        padding: 16px;
-    }
-  }
   .email-and-password-login-div-wrapper form section{
     padding: 0px 16px;
     // display: none;
