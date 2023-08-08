@@ -5,7 +5,7 @@
   width: 100%;
   height: auto;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
   background-size: cover;
   overflow:auto;
   @media (orientation: landscape) {
@@ -20,6 +20,7 @@
 }
 
 .form-wrapper {
+  user-select: none;
   display: flex;
   // min-width: 280px;
   max-width: 420px;

@@ -38,6 +38,7 @@ body,html{
     line-height: 22px;
     letter-spacing: -0.32px; 
     cursor: pointer;
+    border: none;
 
   @include media-breakpoint-max-480{
     padding: 16px;
