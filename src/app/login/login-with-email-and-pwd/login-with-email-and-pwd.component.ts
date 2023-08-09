@@ -6,6 +6,8 @@ import { finalize } from 'rxjs/operators';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ToastrAlertService } from 'src/app/shared/toastr/toastr.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
+import { ErroMsgServices } from 'src/services/errormsg.service';
 
 @Component({
   selector: 'app-login-with-email-and-pwd',
@@ -25,13 +27,13 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
     private formBuilder: FormBuilder,
     public auth : AuthService,
     private router: Router,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private erroMsgServices: ErroMsgServices
   ) { }
     
 
   
   ngOnInit(): void {
-    this.toastrService.overlayContainer = this.toastContainer;
     this.initForm();
   }
 
@@ -51,7 +53,8 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
    authLogin(){
     if (this.loginForm.invalid) {
       console.log(this.loginForm)
-      this.toastrService.error('Please fill all the neccesary details')
+      this.erroMsgServices.setErrMsg('Please fill all the neccesary details');
+      // this.toastrService.error('Please fill all the neccesary details')
       return;
     }
 
@@ -77,8 +80,8 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
     this.loginForm.reset();
   }
 
-
   backClicked(value:any): void{
     this.optionselected.next(value)
   }
+
 }

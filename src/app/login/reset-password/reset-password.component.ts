@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ErroMsgServices } from 'src/services/errormsg.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -13,7 +14,7 @@ export class ResetPasswordComponent implements OnInit {
   public interval;
   public timeLeft: number = 0;
 
-  constructor() { }
+  constructor(private erroMsgServices: ErroMsgServices) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,8 @@ export class ResetPasswordComponent implements OnInit {
 
   submitResetLink(){
     this.timeLeft = 20;
+    this.erroMsgServices.setErrMsg('Enter valid Mail ID');
+
     this.resetLinkStatus = {
       msg: 'We have sent a reset link to your email',
       status: 1

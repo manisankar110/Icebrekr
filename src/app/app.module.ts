@@ -22,7 +22,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({ positionClass: 'inline' }), // ToastrModule added
+    ToastrModule.forRoot({ 
+      positionClass: 'inline', 
+      preventDuplicates: true,
+      autoDismiss: true,
+      maxOpened: 1
+    }), // ToastrModule added
     ToastContainerModule
   ],
   providers: [
