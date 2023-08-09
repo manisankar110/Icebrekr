@@ -11,7 +11,7 @@ export class ResetPasswordComponent implements OnInit {
   @Output() optionselected = new EventEmitter<string>();
   public resetLinkStatus:any;
   public interval;
-  public timeLeft: number = 20;
+  public timeLeft: number = 0;
 
   constructor() { }
 
@@ -34,6 +34,7 @@ export class ResetPasswordComponent implements OnInit {
       } else {
         this.timeLeft = 0;
         clearInterval(this.interval);
+        this.resetLinkStatus = null
       }
     },1000)
   }
