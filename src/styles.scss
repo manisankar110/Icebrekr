@@ -14,8 +14,8 @@
     --gray400 : #7F7F7F !important;
     --darkGray: #544F63 !important;
     --success: #34C759 !important;
-    --failed: #F34B35 !important;
     --warning: #df9104 !important;
+    --radicalRed: #FF2860 !important;
 }
 
 body,html{
@@ -33,7 +33,7 @@ body,html{
   color: var(--success);
 }
 .failed-text{
-  color: var(--failed);
+  color: var(--red);
 }
 .warning-text{
   color: var(--warning);
@@ -143,3 +143,70 @@ body,html{
 #sentLinkIcon{
   color: #ffffff;
 }
+
+.toast-container .toast-icon.custom-toast-info {
+  display: flex;
+  background-image: none !important;
+  background-color: var(--black);
+  color: var(--white);
+  min-width: 280px;
+  max-width: 560px;
+  padding: 16px 26px;
+  align-items: center;
+  gap: 11px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  @include media-breakpoint-max-480{
+    font-size: 16px;
+  }
+  @include media-min-width-650{
+    width: 560px;
+  }
+}
+
+.toast-container{
+  position: relative !important;
+  width: 100%;
+}
+.toast-container .custom-toast-info .toast-title{
+  width: 100%;
+}
+
+#toast-container > .custom-toast-info.toast-info:before {
+  content: "\2795";
+  color: var(--black);
+  font-weight: 800;
+  font-size: 8px;
+  background-color: var(--white);
+  display: flex;
+  width: 20px;
+  height: 15px;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+
+  @include media-min-width-650{
+    width: 18px;
+    height: 16px;
+  }
+}
+
+#toast-container > .custom-toast-info.toast-info:after {
+  content: 'Tertiary';
+  color: var(--radicalRed);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.32px;
+  @include media-breakpoint-max-480{
+    font-size: 16px;
+  }
+}
+
+// #toast-container>.toast-success {
+//   background-image: url(<insert here the url pointing to your new PNG>)!important;
+// }

@@ -32,4 +32,10 @@ export class ToastrAlertService {
         });
     }
 
+    commonToastr(msg) {
+        this.toastr.info('', msg, {
+            timeOut: 3000,
+            toastClass: "toast-icon custom-toast-info"
+        });
+    }
 }

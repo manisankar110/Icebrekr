@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { ErroMsgServices } from 'src/services/errormsg.service';
+import { ToastrAlertService } from '../shared/toastr/toastr.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,11 @@ export class LoginComponent implements OnInit {
   errMsg:any;
   option:number = 0;
 
-  constructor( private toastrService: ToastrService, private erroMsgServices: ErroMsgServices ) { }
+  constructor( 
+    private toastrService: ToastrService, 
+    private erroMsgServices: ErroMsgServices,
+    private customToastrService: ToastrAlertService 
+  ) { }
 
   ngOnInit() {
     this.toastrService.overlayContainer = this.toastContainer;
@@ -22,7 +27,7 @@ export class LoginComponent implements OnInit {
       console.log('value---',typeof(value))
       this.errMsg = value;
       if(typeof(value) !== 'object'){
-        this.toastrService.error(this.errMsg)
+        this.customToastrService.commonToastr(this.errMsg)
       }
     });
   }

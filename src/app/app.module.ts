@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       positionClass: 'inline', 
       preventDuplicates: true,
       autoDismiss: true,
-      maxOpened: 1
+      maxOpened: 1,
+      disableTimeOut: true,
     }), // ToastrModule added
     ToastContainerModule
   ],
