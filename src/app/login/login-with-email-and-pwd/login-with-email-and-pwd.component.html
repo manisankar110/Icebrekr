@@ -1,7 +1,7 @@
-<div class="email-and-password-login-div-wrapper w-100" >
+<div class="email-and-password-login-div-wrapper w-100 smooth-transition" >
     <form class="" [formGroup]="loginForm">
         <section class="">
-            <p class="back-text mb-0 d-inline" (click)="backClicked(0)"><i class="fa fa-angle-left pr-2" style="font-weight: bolder;" aria-hidden="true"></i> Back</p>
+            <p class="back-text mb-0 d-inline" (click)="optionClick(0)"><i class="fa fa-angle-left pr-2" style="font-weight: bolder;" aria-hidden="true"></i> Back</p>
             <!-- <h1>-----{{loginForm.value | json}}</h1> -->
             <p class="login-with-email-title mb-0">Login with Email</p>
         </section>
@@ -14,7 +14,7 @@
             <div class="form-group mb-0 d-flex flex-column">
               <label for="exampleInputPassword1" class="mb-0">Password</label>
               <input type="password" formControlName="password" class="form-control common-input" id="exampleInputPassword1" placeholder="Enter Password">
-              <p class="forget-pwd-text mb-0" (click)="backClicked(2)">Forgot Password?</p>
+              <p class="forget-pwd-text mb-0" (click)="optionClick(2)">Forgot Password?</p>
             </div>
         </section>
         <section>

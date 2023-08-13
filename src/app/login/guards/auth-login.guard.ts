@@ -12,7 +12,7 @@ export class AuthenticationGuard implements CanActivate {
   public readonly JWT_TOKEN = 'JWT_TOKEN';
 
   constructor(private authService: AuthService, private router: Router) {
-    // this.loadToken()
+    this.loadToken()
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
@@ -25,12 +25,12 @@ export class AuthenticationGuard implements CanActivate {
     // Check user is valid or not.  
   }
 
-  // async loadToken() {
-  //   const token = localStorage.getItem(this.JWT_TOKEN);;
-  //   if (token) {
-  //     this.isAuthenticated.next(true);
-  //   } else {
-  //     this.isAuthenticated.next(false);
-  //   }
-  // }
+  async loadToken() {
+    const token = localStorage.getItem(this.JWT_TOKEN);;
+    if (token) {
+      this.isAuthenticated.next(true);
+    } else {
+      this.isAuthenticated.next(false);
+    }
+  }
 }

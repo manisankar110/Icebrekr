@@ -140,9 +140,12 @@ body,html{
   }
 }
 
-#sentLinkIcon{
-  color: #ffffff;
+.reset-pwd-btn #sentLinkIcon{
+  fill: currentColor;
 }
+
+
+// Custom Toastr CSS
 
 .toast-container .toast-icon.custom-toast-info {
   display: flex;
@@ -168,8 +171,19 @@ body,html{
 }
 
 .toast-container{
-  position: relative !important;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 55px;
+  @include media-max-width-650{
+    position: relative !important;
+    bottom: 0px;
+  }
+  @include media-max-height-480px{
+    position: relative !important;
+    bottom: 0px;
+  }
 }
 .toast-container .custom-toast-info .toast-title{
   width: 100%;
@@ -207,6 +221,33 @@ body,html{
   }
 }
 
-// #toast-container>.toast-success {
-//   background-image: url(<insert here the url pointing to your new PNG>)!important;
-// }
+.smooth-transition{
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+
+
+.slide-right {
+  animation: 0.5s slide-right ease-in-out;
+}
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+.slide-left {
+  animation: 0.5s slide-left ease-in-out;
+}
+@keyframes slide-left {
+  from {
+    margin-right: -100%;
+  }
+  to {
+    margin-right: 0%;
+  }
+}

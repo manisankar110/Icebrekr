@@ -1,5 +1,5 @@
-<div class="bg-image container-fluid d-flex justify-content-center align-items-center">
-    <div class="d-flex align-items-center justify-content-center flex-column">
+<div class="bg-image container-fluid d-flex justify-content-center align-items-center" >
+    <div class="d-flex align-items-center justify-content-center flex-column" id="bgContainer">
         <div class="form-wrapper">
             <div class="d-flex flex-column align-items-center justify-content-center w-100" *ngIf="option == 0">
                 <span>
@@ -20,7 +20,7 @@
                 <hr class="w-100 line" style="background: #D1D1D6; ">
                 <h3 class="login-title">Login</h3>
                 <p class="desc1">Choose your method to login</p>
-                <p class="email-btn w-100 primary-btn" (click)="option = 1"><img src="../../assets/icons/email.svg" class="pr-1" /> Email</p>
+                <p class="email-btn w-100 primary-btn" (click)="emailLogin(1)"><img src="../../assets/icons/email.svg" class="pr-1" /> Email</p>
                 <p class="divide-line w-100 m-0">Or</p>
                 <div class="social-login-btn-wrapper">
                     <p class="google-btn w-100 primary-btn"><img src="../../assets/icons/gmail.svg" class="pr-1" /> Google</p>
@@ -29,13 +29,14 @@
                 </div>
 
             </div>
-            <div class="w-100" *ngIf="option == 1" >
-                <app-login-with-email-and-pwd (optionselected)= "backClicked($event)"></app-login-with-email-and-pwd>
+            <div class="w-100 smooth-transition" *ngIf="option == 1" >
+                <app-login-with-email-and-pwd (optionselected)= "optionClick($event)"></app-login-with-email-and-pwd>
             </div>
-            <div class="w-100" *ngIf="option == 2" >
-                <app-reset-password (optionselected)= "backClicked($event)"></app-reset-password>
+            <div class="w-100 smooth-transition" *ngIf="option == 2" >
+                <app-reset-password (optionselected)= "optionClick($event)"></app-reset-password>
             </div>
         </div>
-        <div class="d-flex w-100 justify-content-center align-items-center mb-2" toastContainer ></div>
+        <div class="d-flex w-100 justify-content-center align-items-center mb-2 custom-toastr-container slide-bottom" toastContainer >
+        </div>
     </div>
 </div>

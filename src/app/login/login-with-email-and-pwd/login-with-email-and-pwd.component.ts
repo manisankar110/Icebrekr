@@ -7,7 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ToastrAlertService } from 'src/app/shared/toastr/toastr.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
-import { ErroMsgServices } from 'src/services/errormsg.service';
+import { toastrMsgServices } from 'src/services/toastrMsg.service';
 
 @Component({
   selector: 'app-login-with-email-and-pwd',
@@ -22,24 +22,29 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
   toastContainer: ToastContainerDirective;
   public loginForm:FormGroup;
   
-  
   constructor(
     private formBuilder: FormBuilder,
     public auth : AuthService,
     private router: Router,
     private toastrService: ToastrService,
-    private erroMsgServices: ErroMsgServices
+    private toastrMsgServices: toastrMsgServices,
   ) { }
     
 
   
   ngOnInit(): void {
     this.initForm();
+    this.toastrService.clear();
+    setTimeout(() => {
+      var element = document.getElementById('bgContainer')
+      element.classList.remove('slide-left')
+      element.classList.remove('slide-right')
+    }, 1000);
   }
 
   initForm(){
     this.loginForm = new FormGroup({
-      userName : new FormControl(null, [Validators.required]),
+      userName : new FormControl(null, [Validators.required, Validators.email]),
       password : new FormControl(null, [Validators.required]),
     });
   }
@@ -53,8 +58,7 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
    authLogin(){
     if (this.loginForm.invalid) {
       console.log(this.loginForm)
-      this.erroMsgServices.setErrMsg('Please fill all the neccesary details');
-      // this.toastrService.error('Please fill all the neccesary details')
+      this.toastrMsgServices.setToastrMsg('Please fill all the neccesary details');
       return;
     }
 
@@ -65,12 +69,11 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
 
     const authToken:any = this.auth.loginToken(loginPayload).pipe(finalize(() => authToken.unsubscribe())).subscribe(
       (res: any) => {
-          // this.toastrService.showSuccess('User successfully loggedIn')
+          this.toastrMsgServices.setToastrMsg('Logged in successfully');
           this.router.navigateByUrl('/dashboard', { replaceUrl: true });
           this.clearForm();
-      }, (error: HttpErrorResponse) => {
-        // errorAlert(error.message, error.statusText)
-        // this.toastrService.showError(error.message);
+        }, (error: HttpErrorResponse) => {
+        this.toastrMsgServices.setToastrMsg(error.message);
       }
     )
 
@@ -80,8 +83,26 @@ export class LoginWithEmailAndPwdComponent implements OnInit {
     this.loginForm.reset();
   }
 
-  backClicked(value:any): void{
+  optionClick(value:any): void{
     this.optionselected.next(value)
+    this.toastrService.clear();
+    if(value == 0){
+      var element = document.getElementById('bgContainer')
+      element.classList.remove('slide-left')
+      element.classList.remove('slide-right')
+      element.classList.add('slide-right')
+    }else{
+      var element = document.getElementById('bgContainer')
+      element.classList.remove('slide-left')
+      element.classList.remove('slide-right')
+      element.classList.add('slide-left')
+    }
+  }
+
+  forgetPassword(value:any){
+    var element = document.getElementById('bgContainer')
+    element.classList.add('slide-left')
+    // element.classList.remove('slide-right')
   }
 
 }

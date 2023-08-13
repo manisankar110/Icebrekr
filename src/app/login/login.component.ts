@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
-import { ErroMsgServices } from 'src/services/errormsg.service';
 import { ToastrAlertService } from '../shared/toastr/toastr.service';
+import { toastrMsgServices } from 'src/services/toastrMsg.service';
+import { elementAt } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -12,28 +13,39 @@ export class LoginComponent implements OnInit {
   
   @ViewChild(ToastContainerDirective, { static: true })
   toastContainer: ToastContainerDirective;
-  errMsg:any;
+  toastrMsg:any;
   option:number = 0;
 
   constructor( 
     private toastrService: ToastrService, 
-    private erroMsgServices: ErroMsgServices,
+    private toastrMsgServices: toastrMsgServices,
     private customToastrService: ToastrAlertService 
   ) { }
 
   ngOnInit() {
     this.toastrService.overlayContainer = this.toastContainer;
-    this.erroMsgServices.currentErrMsg$.subscribe((value) => {
+    this.toastrMsgServices.currentToastrMsg$.subscribe((value) => {
       console.log('value---',typeof(value))
-      this.errMsg = value;
+      this.toastrMsg = value;
       if(typeof(value) !== 'object'){
-        this.customToastrService.commonToastr(this.errMsg)
+        this.customToastrService.commonToastr(this.toastrMsg)
       }
     });
+    setTimeout(() => {
+      var element = document.getElementById('bgContainer')
+      element.classList.remove('slide-left')
+      element.classList.remove('slide-right')
+    }, 1000);
+  }
+
+  emailLogin(value:any){
+    console.log(value)
+    this.option = value
+    var element = document.getElementById('bgContainer')
+    element.classList.add('slide-left')
   }
   
-  backClicked(value:any) : void{
-    console.log(value)
+  optionClick(value:any) : void{
     this.option = value
   }
 
