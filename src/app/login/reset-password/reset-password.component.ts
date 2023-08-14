@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { toastrMsgServices } from 'src/services/toastrMsg.service';
+import { toastrMsgServices } from 'src/app/services/toastrMsg.service';
 
 @Component({
   selector: 'app-reset-password',

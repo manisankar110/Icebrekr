@@ -1,1 +1,14 @@
+  <!-- <div class="loader-wrapper">
+    <div class="cssload-loader">Loading</div>
+  </div> -->
+
+<div class="loader-wrapper" *ngIf="isLoading">
+  <div class="loader-circle">
+    <p class="loader-content mb-0">LOADING</p>
+    <div class="loader-line-mask">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+</div>
+
   <router-outlet></router-outlet>

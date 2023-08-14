@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastContainerModule, ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoaderInterceptor } from './services/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastContainerModule
   ],
   providers: [
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: LoaderInterceptor, 
+      multi: true 
+    },
     {
       provide: LocationStrategy, 
       useClass: HashLocationStrategy

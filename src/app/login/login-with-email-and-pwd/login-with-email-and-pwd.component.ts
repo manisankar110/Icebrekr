@@ -7,7 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ToastrAlertService } from 'src/app/shared/toastr/toastr.service';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
-import { toastrMsgServices } from 'src/services/toastrMsg.service';
+import { toastrMsgServices } from 'src/app/services/toastrMsg.service';
 
 @Component({
   selector: 'app-login-with-email-and-pwd',

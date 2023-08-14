@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastContainerDirective, ToastrService } from 'ngx-toastr';
 import { ToastrAlertService } from '../shared/toastr/toastr.service';
-import { toastrMsgServices } from 'src/services/toastrMsg.service';
+import { toastrMsgServices } from 'src/app/services/toastrMsg.service';
 import { elementAt } from 'rxjs/operators';
 
 @Component({
