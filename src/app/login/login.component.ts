@@ -29,13 +29,19 @@ export class LoginComponent implements OnInit {
       this.toastrMsg = value;
       if(typeof(value) !== 'object'){
         this.customToastrService.commonToastr(this.toastrMsg)
+        var toastClass = document.getElementById('toast-container')
+        console.log('toastClasstoastClasstoastClasstoastClass----',this.toastContainer)
+        toastClass.classList.add('slide-top')
+        setTimeout(() => {
+          toastClass.classList.remove('slide-top')
+        }, 1000);
       }
     });
     setTimeout(() => {
       var element = document.getElementById('bgContainer')
       element.classList.remove('slide-left')
       element.classList.remove('slide-right')
-    }, 1000);
+    }, 500);
   }
 
   emailLogin(value:any){

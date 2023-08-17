@@ -34,7 +34,7 @@ export class ResetPasswordComponent implements OnInit {
 
   initForm(){
     this.resetEmailForm = new FormGroup({
-      resetEmail : new FormControl(null, [Validators.required, Validators.email]),
+      resetEmail : new FormControl({value: null,  disabled : false}, [Validators.required, Validators.email]),
     });
   }
 
@@ -49,23 +49,27 @@ export class ResetPasswordComponent implements OnInit {
 
   submitResetLink(){
     if (this.resetEmailForm.invalid) {
-      console.log(this.resetEmailForm)
       this.toastrMsgServices.setToastrMsg('Please fill all the neccesary details');
       return;
     }
+    
+    this.toastrService.clear();
     this.timeLeft = 20;
     this.resetLinkStatus = {
       msg: 'We have sent a reset link to your email',
       status: 1
     }
-    this.toastrMsgServices.setToastrMsg(this.resetLinkStatus?.msg);
+    // this.toastrMsgServices.setToastrMsg(this.resetLinkStatus?.msg);
     this.interval = setInterval(() => {
       if(this.timeLeft > 0) {
+      this.resetEmailForm.controls['resetEmail'].disable()
         this.timeLeft--;
       } else {
         this.timeLeft = 0;
+        this.resetEmailForm.controls['resetEmail'].enable()
         clearInterval(this.interval);
         this.resetLinkStatus = null
+        // this.toastrService.clear()
       }
     },1000)
   }

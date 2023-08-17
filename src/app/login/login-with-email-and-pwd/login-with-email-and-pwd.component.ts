@@ -17,7 +17,6 @@ import { toastrMsgServices } from 'src/app/services/toastrMsg.service';
 export class LoginWithEmailAndPwdComponent implements OnInit {
   
   @Output() optionselected = new EventEmitter<string>();
-  @Input() option:number= 1;
   @ViewChild(ToastContainerDirective, { static: true })
   toastContainer: ToastContainerDirective;
   public loginForm:FormGroup;

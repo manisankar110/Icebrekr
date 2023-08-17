@@ -28,7 +28,7 @@ import { LoaderInterceptor } from './services/loader.interceptor';
       preventDuplicates: true,
       autoDismiss: true,
       maxOpened: 1,
-      disableTimeOut: true,
+      disableTimeOut: false,
     }), // ToastrModule added
     ToastContainerModule
   ],

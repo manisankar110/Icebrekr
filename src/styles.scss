@@ -117,7 +117,7 @@ body,html{
   }
 }
 
-.common-input:hover, .common-input:active, .common-input:focus, .common-input:focus-visible, .common-input:visited{
+.common-input-disabled, .common-input:hover, .common-input:active, .common-input:focus, .common-input:focus-visible, .common-input:visited{
   border: 1px solid var(--darkBlue) !important;
   color: var(--darkBlue) !important;
 }
@@ -226,14 +226,14 @@ body,html{
   transition:all linear 0.5s;
 }
 
-
+// slide Annimations
 
 .slide-right {
   animation: 0.5s slide-right ease-in-out;
 }
 @keyframes slide-right {
   from {
-    margin-left: -100%;
+    margin-left: -50%;
   }
   to {
     margin-left: 0%;
@@ -245,9 +245,21 @@ body,html{
 }
 @keyframes slide-left {
   from {
-    margin-right: -100%;
+    margin-right: -50%;
   }
   to {
     margin-right: 0%;
+  }
+}
+
+.slide-top {
+  animation: 0.5s slide-top ease-in-out;
+}
+@keyframes slide-top {
+  from {
+    margin-bottom: -30%;
+  }
+  to {
+    margin-bottom: 0%;
   }
 }
